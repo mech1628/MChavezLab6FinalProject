@@ -1,0 +1,15 @@
+../Core/Src/LCD_Driver.c:40:6:LCD_GPIO_Init	1
+../Core/Src/LCD_Driver.c:123:6:LTCD_Layer_Init	3
+../Core/Src/LCD_Driver.c:150:6:clearScreen	1
+../Core/Src/LCD_Driver.c:155:6:LTCD__Init	2
+../Core/Src/LCD_Driver.c:214:6:LCD_Draw_Pixel	1
+../Core/Src/LCD_Driver.c:224:6:LCD_Draw_Circle_Fill	4
+../Core/Src/LCD_Driver.c:238:6:LCD_Draw_Vertical_Line	2
+../Core/Src/LCD_Driver.c:246:6:LCD_Clear	3
+../Core/Src/LCD_Driver.c:255:6:LCD_Start_Screen	1
+../Core/Src/LCD_Driver.c:338:6:LCD_SetTextColor	1
+../Core/Src/LCD_Driver.c:344:6:LCD_SetFont	1
+../Core/Src/LCD_Driver.c:350:6:LCD_Draw_Char	7
+../Core/Src/LCD_Driver.c:370:6:LCD_DisplayChar	1
+../Core/Src/LCD_Driver.c:376:6:visualDemo	1
+../Core/Src/LCD_Driver.c:464:6:LCD_Error_Handler	1
