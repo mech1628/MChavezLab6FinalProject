@@ -14,6 +14,7 @@
 /**
   * @brief  LCD color RGB565
   */
+void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos,uint16_t color);
 
 #define LCD_PIXEL_FORMAT_1     LTDC_PIXEL_FORMAT_RGB565
 
@@ -51,6 +52,7 @@
 
 void LTCD__Init(void);
 void LTCD_Layer_Init(uint8_t LayerIndex);
+
 
 void LCD_DrawChar(uint16_t Xpos, uint16_t Ypos, const uint16_t *c);
 void LCD_DisplayChar(uint16_t Xpos, uint16_t Ypos, uint8_t Ascii);

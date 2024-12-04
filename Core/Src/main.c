@@ -13,7 +13,7 @@ void SystemClockOverride(void);
   * @brief  The application entry point.
   * @retval int
   */
-MX_GPIO_Init();
+  MX_GPIO_Init();
   MX_I2C3_Init();
   MX_LTDC_Init();
   MX_RNG_Init();

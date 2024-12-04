@@ -54,9 +54,25 @@ void LCD_Visual_Demo(void)
 }
 
 #if COMPILE_TOUCH_FUNCTIONS == 1
+//void LCD_Touch_Polling_Demo(void)
+//{
+//	LCD_Clear(0,LCD_COLOR_GREEN);
+//	while (1) {
+//		/* If touch pressed */
+//		if (returnTouchStateAndLocation(&StaticTouchData) == STMPE811_State_Pressed) {
+//			/* Touch valid */
+//			printf("\nX: %03d\nY: %03d\n", StaticTouchData.x, StaticTouchData.y);
+//			LCD_Clear(0, LCD_COLOR_RED);
+//		} else {
+//			/* Touch not pressed */
+//			printf("Not Pressed\n\n");
+//			LCD_Clear(0, LCD_COLOR_GREEN);
+//		}
+//	}
+//}
 void LCD_Touch_Polling_Demo(void)
 {
-	LCD_Clear(0,LCD_COLOR_GREEN);
+	LCD_Clear(0,LCD_COLOR_WHITE);
 	while (1) {
 		/* If touch pressed */
 		if (returnTouchStateAndLocation(&StaticTouchData) == STMPE811_State_Pressed) {
@@ -95,6 +111,8 @@ void LCDTouchScreenInterruptGPIOInit(void)
 	LCDTouchIRQ.Line = EXTI_LINE_15;
 
 }
+
+
 
 #define TOUCH_DETECTED_IRQ_STATUS_BIT   (1 << 0)  // Touchscreen detected bitmask
 
@@ -140,7 +158,7 @@ void EXTI15_10_IRQHandler()
 
 		/* Touch not pressed */
 		printf("\nNot pressed \n");
-		LCD_Clear(0, LCD_COLOR_GREEN);
+		LCD_Clear(0, LCD_COLOR_WHITE);
 	}
 
 	STMPE811_Write(STMPE811_FIFO_STA, 0x01);

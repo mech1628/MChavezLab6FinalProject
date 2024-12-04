@@ -37,6 +37,8 @@ static uint16_t CurrentTextColor   = 0xFFFF;
 uint16_t frameBuffer[LCD_PIXEL_WIDTH*LCD_PIXEL_HEIGHT] = {0};			//16bpp pixel format.
 
 
+
+
 void LCD_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
@@ -221,6 +223,13 @@ void LCD_Draw_Pixel(uint16_t x, uint16_t y, uint16_t color)
  * Instead all of these are explicit where color, size, and position are passed in.
  * There is tons of ways to handle drawing. I dont think it matters too much.
  */
+void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+	uint16_t endX = Xpos + 30;
+	uint16_t endY = 30;
+ for(;Xpos<endX;Xpos++){
+	LCD_Draw_Vertical_Line(Xpos, Ypos, endY, color);
+}}
+
 void LCD_Draw_Circle_Fill(uint16_t Xpos, uint16_t Ypos, uint16_t radius, uint16_t color)
 {
     for(int16_t y=-radius; y<=radius; y++)
@@ -252,86 +261,6 @@ void LCD_Clear(uint8_t LayerIndex, uint16_t Color)
 	}
   // TODO: Add more Layers if needed
 }
-void LCD_Start_Screen(void){
-
-	//uint16_t x;
-	//	uint16_t y;
-	//	// This for loop just illustrates how with using logic and for loops, you can create interesting things
-	//	// this may or not be useful ;)
-	//	for(y=0; y<LCD_PIXEL_HEIGHT; y++){
-	////		for(x=0; x < LCD_PIXEL_WIDTH; x++){
-	////			if (x & 32)
-	////				frameBuffer[x*y] = LCD_COLOR_WHITE;
-	////			else
-	////				frameBuffer[x*y] = LCD_COLOR_BLACK;
-	////		} //WEIRD BROKEN SCREEN IMAGE
-	//	}
-	//
-	//	HAL_Delay(1500);
-	//	LCD_Clear(0, LCD_COLOR_GREEN);
-	//	HAL_Delay(1500);
-	//	LCD_Clear(0, LCD_COLOR_RED);
-	//	HAL_Delay(1500);
-	//	LCD_Clear(0, LCD_COLOR_WHITE);
-	//	LCD_Draw_Vertical_Line(10,10,250,LCD_COLOR_MAGENTA);
-	//	HAL_Delay(1500);
-	//	LCD_Draw_Vertical_Line(230,10,250,LCD_COLOR_MAGENTA);
-	//	HAL_Delay(1500);
-	//
-	//	LCD_Draw_Circle_Fill(125,150,20,LCD_COLOR_BLACK);
-	//	HAL_Delay(2000);
-	//
-	//	LCD_Clear(0,LCD_COLOR_MAGENTA);
-	//	LCD_SetTextColor(LCD_COLOR_BLACK);
-	//	//LCD_SetFont(&Font16x24);
-	//	LCD_SetFont(LCD_Currentfonts);
-	//
-	//	//LCD_DisplayChar(Xpos, Ypos, Ascii)
-	//	LCD_DisplayChar(100,140,'M');
-	//	LCD_DisplayChar(115,140,'e');
-	//	LCD_DisplayChar(125,140,'l');
-	//	LCD_DisplayChar(130,140,'i');
-	//	LCD_DisplayChar(140,140,'s');
-	//	LCD_DisplayChar(155,140,'s');
-	//	LCD_DisplayChar(170,140,'a');
-	//
-	//	LCD_DisplayChar(125,160,'C');
-	//	LCD_DisplayChar(140,160,'h');
-	//	LCD_DisplayChar(150,160,'a');
-	//	LCD_DisplayChar(160,160,'v');
-	//	LCD_DisplayChar(170,160,'e');
-	//	LCD_DisplayChar(185,160,'z');
-		HAL_Delay(1500);
-		LCD_Clear(0, LCD_COLOR_WHITE);
-		//LCD_Draw_Vertical_Line(x, y, len, color)
-		LCD_Draw_Vertical_Line(10,10,250,LCD_COLOR_MAGENTA);
-		HAL_Delay(1500);
-//		LCD_Draw_Vertical_Line(10,50,250,LCD_COLOR_MAGENTA);
-//		HAL_Delay(1500);
-		LCD_SetTextColor(LCD_COLOR_BLACK);
-		//LCD_SetFont(&Font16x24);
-		LCD_SetFont(LCD_Currentfonts);
-
-		//LCD_DisplayChar(Xpos, Ypos, Ascii)
-		LCD_DisplayChar(30,200,'T');
-		LCD_DisplayChar(45,200,'E');
-		LCD_DisplayChar(55,200,'T');
-		LCD_DisplayChar(70,200,'R');
-		LCD_DisplayChar(85,200,'I');
-		LCD_DisplayChar(100,200,'S');
-
-
-		LCD_DisplayChar(125,160,'P');
-		LCD_DisplayChar(140,160,'U');
-		LCD_DisplayChar(150,160,'S');
-		LCD_DisplayChar(160,160,'H');
-
-		LCD_DisplayChar(140,160,'S');
-		LCD_DisplayChar(150,160,'T');
-		LCD_DisplayChar(160,160,'A');
-		LCD_DisplayChar(170,160,'R');
-		LCD_DisplayChar(185,160,'T');
-	}
 
 
 //This was taken and adapted from stm32's mcu code
@@ -406,9 +335,12 @@ void visualDemo(void){
 	LCD_SetFont(&Font16x24);
 	//LCD_SetFont(LCD_Currentfonts);
 
+
+
 //	LCD_DisplayChar(Xpos, Ypos, Ascii)
 	//total width is 240, total height is 320
 	//                   x, y
+
 		LCD_DisplayChar(72,20,'T');
 		LCD_DisplayChar(90,20,'E');
 		LCD_DisplayChar(105,20,'T');
@@ -436,6 +368,9 @@ void visualDemo(void){
 	    LCD_DisplayChar(120,290,'l');
 	    LCD_DisplayChar(135,290,'a');
 	    LCD_DisplayChar(150,290,'y');
+
+	    //Shapes(X,Y,COLOR)
+	    LCD_DrawSingleSquare(25, 40, LCD_COLOR_BLUE2);
 
 
 
