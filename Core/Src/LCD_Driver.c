@@ -224,11 +224,91 @@ void LCD_Draw_Pixel(uint16_t x, uint16_t y, uint16_t color)
  * There is tons of ways to handle drawing. I dont think it matters too much.
  */
 void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-	uint16_t endX = Xpos + 30;
-	uint16_t endY = 30;
+	uint16_t endX = Xpos + 30; //adds 30 from wherever you start on x axis
+	uint16_t endY = 30; //makes it longer
  for(;Xpos<endX;Xpos++){
 	LCD_Draw_Vertical_Line(Xpos, Ypos, endY, color);
 }}
+
+void LCD_DrawLShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+
+	uint16_t endX = Xpos + 30;
+		uint16_t endY = Ypos + 30;
+		uint16_t endXX = endX + 1;
+		uint16_t endYY = endY + 30;
+	 for(;Xpos<endX;Xpos++){
+		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+	 }
+	 for (;endX < endXX ;endX++){
+		 LCD_DrawSingleSquare(endX, endYY, color);
+	}
+}
+
+void LCD_DrawIShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+
+	uint16_t endX = Xpos + 30;
+		uint16_t endY = Ypos + 30;
+
+	 for(;Xpos<endX;Xpos++){
+		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+
+	}
+}
+
+void LCD_DrawJShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+
+	uint16_t endX = Xpos + 30;
+		uint16_t endY = Ypos + 30;
+		uint16_t endXX = endX + 1;
+		uint16_t endYY = endY + 30;
+	 for(;Xpos<endX;Xpos++){
+		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+	 }
+	 for (;endX < endXX ;endX++){
+		 LCD_DrawSingleSquare(endX, Ypos, color);
+	}
+}
+
+void LCD_DrawHatShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+	uint16_t endX = Xpos + 30;
+	uint16_t endY = Ypos + 30;
+	uint16_t endXX = endX + 1;
+//	uint16_t endYY = endY + 30;
+ for(;Xpos<endX;Xpos++){
+	LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+ }
+ for (;endX < endXX ;endX++){
+	 LCD_DrawSingleSquare(endX, endY, color);
+}
+}
+void LCD_DrawZShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+
+	uint16_t endX = Xpos + 30;
+		uint16_t endY = Ypos + 30;
+		uint16_t endXX = endX + 1;
+		uint16_t endYY = endY + 30;
+	 for(;Xpos<endX;Xpos++){
+		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+		LCD_DrawSingleSquare((Xpos-30), Ypos, color);
+	 }
+	 for (;endX < endXX ;endX++){
+		 LCD_DrawSingleSquare(endX, endYY, color);
+	}
+	 	}
+void LCD_DrawSShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
+
+	uint16_t endX = Xpos + 30;
+		uint16_t endY = Ypos + 30;
+		uint16_t endXX = endX + 1;
+		uint16_t endYY = endY + 30;
+	 for(;Xpos<endX;Xpos++){
+		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+		LCD_DrawSingleSquare(endX, Ypos, color);
+	 }
+	 for (;endX < endXX ;endX++){
+		 LCD_DrawSingleSquare((Xpos-60), endYY, color);
+	}
+	 	}
 
 void LCD_Draw_Circle_Fill(uint16_t Xpos, uint16_t Ypos, uint16_t radius, uint16_t color)
 {
@@ -370,9 +450,13 @@ void visualDemo(void){
 	    LCD_DisplayChar(150,290,'y');
 
 	    //Shapes(X,Y,COLOR)
-	    LCD_DrawSingleSquare(25, 40, LCD_COLOR_BLUE2);
-
-
+	    LCD_DrawSingleSquare(10, 50, LCD_COLOR_RED);
+	    LCD_DrawLShape(10,160, LCD_COLOR_MAGENTA);
+	    LCD_DrawHatShape(98, 50, LCD_COLOR_GREEN);
+	    LCD_DrawZShape(175, 40,LCD_COLOR_BLUE);
+	    LCD_DrawSShape(160, 160, LCD_COLOR_RED);
+	    LCD_DrawJShape(80,160, LCD_COLOR_YELLOW);
+	    LCD_DrawIShape(55,60, LCD_COLOR_CYAN);
 
 //	LCD_DisplayChar(100,140,'M');
 //	LCD_DisplayChar(115,140,'e');
