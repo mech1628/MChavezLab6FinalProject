@@ -1,8 +1,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ApplicationCode.h"
-#include "LCD_Driver.h"
+
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -57,17 +56,35 @@ int main(void)
   // Note - You, the developer, MAY have to play with some of this coniguration as you progress in your project
 
 
-  ApplicationInit(); // Initializes the LCD functionality
-
 //  LCD_Start_Screen();
-  LCD_Visual_Demo();
+  LCD_Start_Screen();
 
-  HAL_Delay(5000);
+//  HAL_Delay(5000);
 
   // DO NOT CALL THIS FUNCTION WHEN INTERRUPT MODE IS SELECTED IN THE COMPILE SWITCH IN stmpe811.h
   // Un-comment the below function after setting COMPILE_TOUCH to 1 in stmpe811.h
   //LCD_Touch_Polling_Demo(); // This function Will not return
 
+ for(;;){
+
+//
+//  		uint32_t eventsToRun = getScheduledEvents();
+//
+//  		if((eventsToRun & (InitiateGamePlay_EVENT))!= 0){ //scheduled events doesnt equal zero if at least one event is scheduled
+//  			Initiate_GamePlay();
+//  			removeSchedulerEvent(InitiateGamePlay_EVENT);
+//  		}
+//  		if((eventsToRun & (ButtonPressed_RotateBlock)) != 0){
+//  			AppDelay(DELAY);
+//  		}
+//  		if((eventsToRun & (PlayEnded_ReturnTime)) != 0){
+//  			//printf("Your format string here: %d\n", your_variable);
+////  			uint16_t Temperature = 0;
+////  			Temperature = GYRO_TEMP_RETURN();
+////  			printf("TEMPERATURE = %d\n", Temperature);
+////  			removeSchedulerEvent(PRINT_TEMP);
+//
+	}
   while (1)
   {
 

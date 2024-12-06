@@ -8,6 +8,7 @@
 
 #include "LCD_Driver.h"
 #include "stm32f4xx_hal.h"
+#include "GameLogistics.h"
 
 #include <stdio.h>
 
@@ -16,7 +17,7 @@
 #define INC_APPLICATIONCODE_H_
 
 void ApplicationInit(void);
-void LCD_Visual_Demo(void);
+void LCD_Start_Screen(void);
 
 
 

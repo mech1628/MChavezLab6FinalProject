@@ -2,12 +2,17 @@
 #ifndef __MAIN_H
 #define __MAIN_H
 
+#include "ApplicationCode.h"
+#include "LCD_Driver.h"
+#include "Scheduler.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
+
 
 
 /* Private includes ----------------------------------------------------------*/

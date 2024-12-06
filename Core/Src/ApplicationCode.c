@@ -48,7 +48,7 @@ void ApplicationInit(void)
 	#endif // COMPILE_TOUCH_FUNCTIONS
 }
 
-void LCD_Visual_Demo(void)
+void LCD_Start_Screen(void)
 {
 	visualDemo();
 }
@@ -153,12 +153,15 @@ void EXTI15_10_IRQHandler()
 		/* Touch valid */
 		printf("\nX: %03d\nY: %03d \n", StaticTouchData.x, StaticTouchData.y);
 		LCD_Clear(0, LCD_COLOR_RED);
+		//Add scheduled event to initiate game play
 
 	}else{
 
 		/* Touch not pressed */
 		printf("\nNot pressed \n");
 		LCD_Clear(0, LCD_COLOR_WHITE);
+		LCD_DrawLShape(100, 100, LCD_COLOR_BLACK);
+
 	}
 
 	STMPE811_Write(STMPE811_FIFO_STA, 0x01);

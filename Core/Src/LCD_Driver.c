@@ -218,97 +218,7 @@ void LCD_Draw_Pixel(uint16_t x, uint16_t y, uint16_t color)
 	frameBuffer[y*LCD_PIXEL_WIDTH+x] = color;  //You cannot do x*y to set the pixel.
 }
 
-/*
- * These functions are simple examples. Most computer graphics like OpenGl and stm's graphics library use a state machine. Where you first call some function like SetColor(color), SetPosition(x,y), then DrawSqure(size)
- * Instead all of these are explicit where color, size, and position are passed in.
- * There is tons of ways to handle drawing. I dont think it matters too much.
- */
-void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-	uint16_t endX = Xpos + 30; //adds 30 from wherever you start on x axis
-	uint16_t endY = 30; //makes it longer
- for(;Xpos<endX;Xpos++){
-	LCD_Draw_Vertical_Line(Xpos, Ypos, endY, color);
-}}
 
-void LCD_DrawLShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-
-	uint16_t endX = Xpos + 30;
-		uint16_t endY = Ypos + 30;
-		uint16_t endXX = endX + 1;
-		uint16_t endYY = endY + 30;
-	 for(;Xpos<endX;Xpos++){
-		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
-	 }
-	 for (;endX < endXX ;endX++){
-		 LCD_DrawSingleSquare(endX, endYY, color);
-	}
-}
-
-void LCD_DrawIShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-
-	uint16_t endX = Xpos + 30;
-		uint16_t endY = Ypos + 30;
-
-	 for(;Xpos<endX;Xpos++){
-		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
-
-	}
-}
-
-void LCD_DrawJShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-
-	uint16_t endX = Xpos + 30;
-		uint16_t endY = Ypos + 30;
-		uint16_t endXX = endX + 1;
-		uint16_t endYY = endY + 30;
-	 for(;Xpos<endX;Xpos++){
-		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
-	 }
-	 for (;endX < endXX ;endX++){
-		 LCD_DrawSingleSquare(endX, Ypos, color);
-	}
-}
-
-void LCD_DrawHatShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-	uint16_t endX = Xpos + 30;
-	uint16_t endY = Ypos + 30;
-	uint16_t endXX = endX + 1;
-//	uint16_t endYY = endY + 30;
- for(;Xpos<endX;Xpos++){
-	LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
- }
- for (;endX < endXX ;endX++){
-	 LCD_DrawSingleSquare(endX, endY, color);
-}
-}
-void LCD_DrawZShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-
-	uint16_t endX = Xpos + 30;
-		uint16_t endY = Ypos + 30;
-		uint16_t endXX = endX + 1;
-		uint16_t endYY = endY + 30;
-	 for(;Xpos<endX;Xpos++){
-		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
-		LCD_DrawSingleSquare((Xpos-30), Ypos, color);
-	 }
-	 for (;endX < endXX ;endX++){
-		 LCD_DrawSingleSquare(endX, endYY, color);
-	}
-	 	}
-void LCD_DrawSShape(uint16_t Xpos, uint16_t Ypos, uint16_t color){
-
-	uint16_t endX = Xpos + 30;
-		uint16_t endY = Ypos + 30;
-		uint16_t endXX = endX + 1;
-		uint16_t endYY = endY + 30;
-	 for(;Xpos<endX;Xpos++){
-		LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
-		LCD_DrawSingleSquare(endX, Ypos, color);
-	 }
-	 for (;endX < endXX ;endX++){
-		 LCD_DrawSingleSquare((Xpos-60), endYY, color);
-	}
-	 	}
 
 void LCD_Draw_Circle_Fill(uint16_t Xpos, uint16_t Ypos, uint16_t radius, uint16_t color)
 {
@@ -384,102 +294,15 @@ void LCD_DisplayChar(uint16_t Xpos, uint16_t Ypos, uint8_t Ascii)
 
 void visualDemo(void){
 {
-	uint16_t x;
-	uint16_t y;
-	// This for loop just illustrates how with using logic and for loops, you can create interesting things
-	// this may or not be useful ;)
-//	for(y=0; y<LCD_PIXEL_HEIGHT; y++){
-//		for(x=0; x < LCD_PIXEL_WIDTH; x++){
-//			if (x & 32)
-//				frameBuffer[x*y] = LCD_COLOR_WHITE;
-//			else
-//				frameBuffer[x*y] = LCD_COLOR_BLACK;
-//		} //WEIRD BROKEN SCREEN IMAGE
-
-//	HAL_Delay(1500);
-//	LCD_Clear(0, LCD_COLOR_GREEN);
-//	HAL_Delay(1500);
-//	LCD_Clear(0, LCD_COLOR_RED);
-//	HAL_Delay(1500);
-//	LCD_Clear(0, LCD_COLOR_WHITE);
-//	LCD_Draw_Vertical_Line(10,10,250,LCD_COLOR_MAGENTA);
-//	HAL_Delay(1500);
-//	LCD_Draw_Vertical_Line(230,10,250,LCD_COLOR_MAGENTA);
-//	HAL_Delay(1500);
-
-	LCD_Draw_Circle_Fill(125,150,20,LCD_COLOR_BLACK);
-	HAL_Delay(100);
-
-	LCD_Clear(0,LCD_COLOR_WHITE);
-	LCD_SetTextColor(LCD_COLOR_BLACK);
-	LCD_SetFont(&Font16x24);
-	//LCD_SetFont(LCD_Currentfonts);
+	StartScreen();
 
 
 
-//	LCD_DisplayChar(Xpos, Ypos, Ascii)
-	//total width is 240, total height is 320
-	//                   x, y
-
-		LCD_DisplayChar(72,20,'T');
-		LCD_DisplayChar(90,20,'E');
-		LCD_DisplayChar(105,20,'T');
-		LCD_DisplayChar(122,20,'R');
-		LCD_DisplayChar(133,20,'I');
-		LCD_DisplayChar(143,20,'S');
-
-		LCD_DisplayChar(10,260,'T');
-		LCD_DisplayChar(25,260,'o');
-		LCD_DisplayChar(40,260,'u');
-		LCD_DisplayChar(55,260,'c');
-		LCD_DisplayChar(70,260,'h');
-
-		LCD_DisplayChar(100,260,'S');
-		LCD_DisplayChar(115,260,'c');
-		LCD_DisplayChar(130,260,'r');
-		LCD_DisplayChar(145,260,'e');
-	    LCD_DisplayChar(160,260,'e');
-	    LCD_DisplayChar(175,260,'n');
-
-	    LCD_DisplayChar(200,260,'t');
-	    LCD_DisplayChar(210,260,'o');
-
-	    LCD_DisplayChar(105,290,'P');
-	    LCD_DisplayChar(120,290,'l');
-	    LCD_DisplayChar(135,290,'a');
-	    LCD_DisplayChar(150,290,'y');
-
-	    //Shapes(X,Y,COLOR)
-	    LCD_DrawSingleSquare(10, 50, LCD_COLOR_RED);
-	    LCD_DrawLShape(10,160, LCD_COLOR_MAGENTA);
-	    LCD_DrawHatShape(98, 50, LCD_COLOR_GREEN);
-	    LCD_DrawZShape(175, 40,LCD_COLOR_BLUE);
-	    LCD_DrawSShape(160, 160, LCD_COLOR_RED);
-	    LCD_DrawJShape(80,160, LCD_COLOR_YELLOW);
-	    LCD_DrawIShape(55,60, LCD_COLOR_CYAN);
-
-//	LCD_DisplayChar(100,140,'M');
-//	LCD_DisplayChar(115,140,'e');
-//	LCD_DisplayChar(125,140,'l');
-//	LCD_DisplayChar(130,140,'i');
-//	LCD_DisplayChar(140,140,'s');
-//	LCD_DisplayChar(155,140,'s');
-//	LCD_DisplayChar(170,140,'a');
-//
-//	LCD_DisplayChar(125,160,'C');
-//	LCD_DisplayChar(140,160,'h');
-//	LCD_DisplayChar(150,160,'a');
-//	LCD_DisplayChar(160,160,'v');
-//    LCD_DisplayChar(170,160,'e');
-//	LCD_DisplayChar(185,160,'z');
-//}
 }
 }
 
-/**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+
+  // @brief  This function is executed in case of error occurrence.
 void LCD_Error_Handler(void){
 
   /* USER CODE BEGIN Error_Handler_Debug */

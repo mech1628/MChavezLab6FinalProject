@@ -7,6 +7,8 @@
 #include "ili9341.h"
 #include "fonts.h"
 #include "stmpe811.h"
+#include "GameLogistics.h"
+#include "StartPlayAndTimeScreen.h"
 
 #define COMPILE_TOUCH_FUNCTIONS COMPILE_TOUCH
 #define TOUCH_INTERRUPT_ENABLED COMPILE_TOUCH_INTERRUPT_SUPPORT
@@ -73,7 +75,6 @@ void visualDemo(void);
 
 void LCD_Error_Handler(void);
 
-void LCD_Start_Screen(void);
 
 #if COMPILE_TOUCH_FUNCTIONS == 1
 void InitializeLCDTouch(void);
