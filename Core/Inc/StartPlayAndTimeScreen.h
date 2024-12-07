@@ -15,6 +15,7 @@
 #include "LCD_Driver.h"
 
 void StartScreen(void);
+void GamePlatform(void);
 
 
 #endif /* INC_STARTPLAYANDTIMESCREEN_H_ */

@@ -1,0 +1,9 @@
+../Core/Src/TimerDriver.c:9:6:TIMERx_Init	16	static
+../Core/Src/TimerDriver.c:31:6:CLEAR_STATUS_REG	16	static
+../Core/Src/TimerDriver.c:35:6:Timx_Clock_Control	16	static
+../Core/Src/TimerDriver.c:54:6:StartTimer	16	static
+../Core/Src/TimerDriver.c:58:6:StopTimer	16	static
+../Core/Src/TimerDriver.c:62:6:ResetTimer	16	static
+../Core/Src/TimerDriver.c:66:10:TimerARR_ValReturn	16	static
+../Core/Src/TimerDriver.c:70:10:TimerValueReturn	16	static
+../Core/Src/TimerDriver.c:74:6:TimerEnableOrDisableInterrupt	16	static

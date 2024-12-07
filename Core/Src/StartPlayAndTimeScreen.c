@@ -7,6 +7,19 @@
 
 #include "StartPlayAndTimeScreen.h"
 
+void GamePlatform(void){
+	uint16_t endX = 240;
+	uint16_t Xpos = 0;
+	uint16_t Ypos = 300;
+	uint32_t color = LCD_COLOR_BLACK;
+		for(;Xpos<endX;Xpos++){
+			LCD_Draw_Vertical_Line(Xpos, Ypos, 90, color);
+
+		}
+
+}
+
+
 void StartScreen(void){
 	// This for loop just illustrates how with using logic and for loops, you can create interesting things
 		// this may or not be useful ;)
@@ -73,11 +86,11 @@ void StartScreen(void){
 
 		    //Shapes(X,Y,COLOR)
 		    LCD_DrawSingleSquare(10, 50, LCD_COLOR_RED);
-//		    LCD_DrawLShape(10,160, LCD_COLOR_MAGENTA);
+		    LCD_DrawLShape(10,160, LCD_COLOR_MAGENTA);
 		    LCD_DrawHatShape(98, 50, LCD_COLOR_GREEN);
 		    LCD_DrawZShape(175, 40,LCD_COLOR_BLUE);
-//		    LCD_DrawSShape(160, 160, LCD_COLOR_RED);
-//		    LCD_DrawJShape(80,160, LCD_COLOR_YELLOW);
+		    LCD_DrawSShape(160, 160, LCD_COLOR_RED);
+		    LCD_DrawJShape(80,160, LCD_COLOR_YELLOW);
 		    LCD_DrawIShape(55,60, LCD_COLOR_CYAN);
 //
 //	    	LCD_DrawLShapeRotCWOnce(80, 160, LCD_COLOR_BLACK);
@@ -96,6 +109,6 @@ void StartScreen(void){
 
 //		    LCD_DrawZShapeRotCWOnce(120, 80, LCD_COLOR_BLACK);
 
-		    LCD_DrawSShapeRotCWOnce(120, 80, LCD_COLOR_BLACK);
+//		    LCD_DrawSShapeRotCWOnce(120, 80, LCD_COLOR_BLACK);
 
 }

@@ -12,6 +12,7 @@
 #define InitiateGamePlay_EVENT (1<<0) //this bitmask changes nothing,"shift 1 0 places"
 #define ButtonPressed_RotateBlock (1<<1)
 #define PlayEnded_ReturnTime (1<<2)
+#define DropBlockOnePixel (1<<3)
 
 uint32_t getScheduledEvents(); //retuns scheduled events
 void addSchedulerEvent(uint32_t event);

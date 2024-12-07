@@ -1,1 +1,2 @@
-../Core/Src/StartPlayAndTimeScreen.c:10:6:StartScreen	1
+../Core/Src/StartPlayAndTimeScreen.c:10:6:GamePlatform	2
+../Core/Src/StartPlayAndTimeScreen.c:23:6:StartScreen	1

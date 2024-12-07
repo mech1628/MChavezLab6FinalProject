@@ -5,7 +5,18 @@
  *      Author: Owner
  */
 #include "LCD_Driver.h"
+ //*********************************Array of shapes to choose from using RNG
 
+void (*shapes[7])(uint16_t, uint16_t, uint16_t) = {
+    LCD_DrawSingleSquare,
+    LCD_DrawLShape,
+    LCD_DrawIShape,
+    LCD_DrawJShape,
+    LCD_DrawHatShape,
+    LCD_DrawZShape,
+    LCD_DrawSShape
+};
+//*****************Original Shapes
 void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos, uint16_t color){
 	uint16_t endX = Xpos + 30; //adds 30 from wherever you start on x axis
 	uint16_t endY = 30; //makes it longer

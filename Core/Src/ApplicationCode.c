@@ -161,6 +161,7 @@ void EXTI15_10_IRQHandler()
 		printf("\nNot pressed \n");
 		LCD_Clear(0, LCD_COLOR_WHITE);
 		LCD_DrawLShape(100, 100, LCD_COLOR_BLACK);
+		GamePlatform();
 
 	}
 

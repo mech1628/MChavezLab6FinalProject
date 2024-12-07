@@ -9,6 +9,7 @@
 #include "LCD_Driver.h"
 #include "stm32f4xx_hal.h"
 #include "GameLogistics.h"
+#include "StartPlayAndTimeScreen.h"
 
 #include <stdio.h>
 
