@@ -13,6 +13,7 @@
 #include "fonts.h"
 #include "stmpe811.h"
 #include "LCD_Driver.h"
+#include "GameLogistics.h"
 
 void StartScreen(void);
 void GamePlatform(void);

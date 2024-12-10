@@ -1,4 +1,11 @@
-../Core/Src/main.c:22:5:main	1
-../Core/Src/main.c:96:6:SystemClock_Config	3
-../Core/Src/main.c:138:6:SystemClockOverride	1
-../Core/Src/main.c:346:6:Error_Handler	1
+../Core/Src/main.c:50:5:main	1
+../Core/Src/main.c:123:6:Error_Handler	1
+../Core/Src/main.c:133:13:MX_RNG_Init	2
+../Core/Src/main.c:140:13:MX_I2C3_Init	4
+../Core/Src/main.c:176:13:MX_SPI5_Init	2
+../Core/Src/main.c:252:13:MX_GPIO_Init	1
+../Core/Src/main.c:426:13:MX_LTDC_Init	4
+../Core/Src/main.c:499:6:SystemClock_Config	3
+../Core/Src/main.c:541:6:SystemClockOverride	1
+../Core/Src/main.c:580:10:GenerateTetrisShape	2
+../Core/Src/main.c:589:10:GenerateRandomColor	2

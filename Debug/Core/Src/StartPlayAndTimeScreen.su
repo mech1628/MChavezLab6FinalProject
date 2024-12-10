@@ -1,2 +1,2 @@
-../Core/Src/StartPlayAndTimeScreen.c:10:6:GamePlatform	24	static
-../Core/Src/StartPlayAndTimeScreen.c:23:6:StartScreen	8	static
+../Core/Src/StartPlayAndTimeScreen.c:11:6:GamePlatform	24	static
+../Core/Src/StartPlayAndTimeScreen.c:24:6:StartScreen	16	static

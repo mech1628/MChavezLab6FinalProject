@@ -16,7 +16,7 @@
 /**
   * @brief  LCD color RGB565
   */
-void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos,uint16_t color);
+
 
 #define LCD_PIXEL_FORMAT_1     LTDC_PIXEL_FORMAT_RGB565
 

@@ -298,10 +298,8 @@ HAL_StatusTypeDef HAL_RNG_UnRegisterReadyDataCallback(RNG_HandleTypeDef *hrng);
 /** @defgroup RNG_Exported_Functions_Group2 Peripheral Control functions
   * @{
   */
-uint32_t HAL_RNG_GetRandomNumber(RNG_HandleTypeDef
-                                 *hrng);    /* Obsolete, use HAL_RNG_GenerateRandomNumber() instead    */
-uint32_t HAL_RNG_GetRandomNumber_IT(RNG_HandleTypeDef
-                                    *hrng); /* Obsolete, use HAL_RNG_GenerateRandomNumber_IT() instead */
+uint32_t HAL_RNG_GetRandomNumber(RNG_HandleTypeDef *hrng);    /* Obsolete, use HAL_RNG_GenerateRandomNumber() instead    */
+uint32_t HAL_RNG_GetRandomNumber_IT(RNG_HandleTypeDef  *hrng); /* Obsolete, use HAL_RNG_GenerateRandomNumber_IT() instead */
 HAL_StatusTypeDef HAL_RNG_GenerateRandomNumber(RNG_HandleTypeDef *hrng, uint32_t *random32bit);
 HAL_StatusTypeDef HAL_RNG_GenerateRandomNumber_IT(RNG_HandleTypeDef *hrng);
 uint32_t HAL_RNG_ReadLastRandomNumber(const RNG_HandleTypeDef *hrng);

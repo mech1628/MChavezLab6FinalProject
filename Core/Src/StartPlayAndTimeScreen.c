@@ -7,6 +7,7 @@
 
 #include "StartPlayAndTimeScreen.h"
 
+
 void GamePlatform(void){
 	uint16_t endX = 240;
 	uint16_t Xpos = 0;
@@ -92,6 +93,11 @@ void StartScreen(void){
 		    LCD_DrawSShape(160, 160, LCD_COLOR_RED);
 		    LCD_DrawJShape(80,160, LCD_COLOR_YELLOW);
 		    LCD_DrawIShape(55,60, LCD_COLOR_CYAN);
+		    uint16_t RandomColor = DrawRandomColor();
+		    DrawRandomShape(100, 150, RandomColor);
+
+
+
 //
 //	    	LCD_DrawLShapeRotCWOnce(80, 160, LCD_COLOR_BLACK);
 //	    	LCD_DrawLShapeRotCWTwice(50, 100, LCD_COLOR_RED);

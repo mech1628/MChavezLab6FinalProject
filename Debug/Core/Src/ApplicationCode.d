@@ -32,7 +32,10 @@ Core/Src/ApplicationCode.o: ../Core/Src/ApplicationCode.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Core/Inc/ili9341.h ../Core/Inc/fonts.h ../Core/Inc/stmpe811.h \
- ../Core/Inc/GameLogistics.h ../Core/Inc/StartPlayAndTimeScreen.h
+ ../Core/Inc/GameLogistics.h ../Core/Inc/RngDriver.h \
+ ../Core/Inc/StartPlayAndTimeScreen.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rng.h \
+ ../Core/Inc/main.h ../Core/Inc/ApplicationCode.h ../Core/Inc/Scheduler.h
 ../Core/Inc/ApplicationCode.h:
 ../Core/Inc/LCD_Driver.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -70,4 +73,9 @@ Core/Src/ApplicationCode.o: ../Core/Src/ApplicationCode.c \
 ../Core/Inc/fonts.h:
 ../Core/Inc/stmpe811.h:
 ../Core/Inc/GameLogistics.h:
+../Core/Inc/RngDriver.h:
 ../Core/Inc/StartPlayAndTimeScreen.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rng.h:
+../Core/Inc/main.h:
+../Core/Inc/ApplicationCode.h:
+../Core/Inc/Scheduler.h:

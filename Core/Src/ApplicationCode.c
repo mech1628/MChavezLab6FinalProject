@@ -50,7 +50,7 @@ void ApplicationInit(void)
 
 void LCD_Start_Screen(void)
 {
-	visualDemo();
+	StartScreen();
 }
 
 #if COMPILE_TOUCH_FUNCTIONS == 1
@@ -160,8 +160,8 @@ void EXTI15_10_IRQHandler()
 		/* Touch not pressed */
 		printf("\nNot pressed \n");
 		LCD_Clear(0, LCD_COLOR_WHITE);
-		LCD_DrawLShape(100, 100, LCD_COLOR_BLACK);
 		GamePlatform();
+
 
 	}
 

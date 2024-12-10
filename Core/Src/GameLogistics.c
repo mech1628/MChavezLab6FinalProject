@@ -7,15 +7,66 @@
 #include "LCD_Driver.h"
  //*********************************Array of shapes to choose from using RNG
 
-void (*shapes[7])(uint16_t, uint16_t, uint16_t) = {
+void (*Shapes[7])(uint16_t, uint16_t, uint16_t) = {
     LCD_DrawSingleSquare,
     LCD_DrawLShape,
     LCD_DrawIShape,
     LCD_DrawJShape,
     LCD_DrawHatShape,
     LCD_DrawZShape,
-    LCD_DrawSShape
+    LCD_DrawSShape,
 };
+
+
+
+uint16_t DrawRandomColor(void) {
+	uint16_t ColorIndex;
+	uint16_t ChosenColor;
+
+	uint16_t Colors[6] = {
+         LCD_COLOR_BLUE,
+         LCD_COLOR_CYAN,
+         LCD_COLOR_GREEN,
+         LCD_COLOR_MAGENTA,
+         LCD_COLOR_RED,
+         LCD_COLOR_YELLOW,
+     };
+
+    ColorIndex = GenerateRandomColor();
+
+
+     if (ColorIndex < 6) {
+    	 ChosenColor = Colors[ColorIndex];
+
+     }
+ return ChosenColor;
+}
+
+
+ void DrawRandomShape(uint16_t x, uint16_t y, uint16_t color) {
+	 uint16_t ColorIndex;
+
+	 uint16_t ShapeIndex;
+
+//	    ColorIndex = GenerateRandomColor();
+//	     if (ColorIndex < 6) {
+//	    	 ChosenColor = Colors[ColorIndex];
+
+    ShapeIndex = GenerateTetrisShape();
+
+
+     if (ShapeIndex < 7) {
+         Shapes[ShapeIndex](x, y, ColorIndex);
+     } else {
+
+         printf("Error: Invalid shape index %lu\n", ShapeIndex);
+     }
+
+
+ }
+
+
+
 //*****************Original Shapes
 void LCD_DrawSingleSquare(uint16_t Xpos, uint16_t Ypos, uint16_t color){
 	uint16_t endX = Xpos + 30; //adds 30 from wherever you start on x axis

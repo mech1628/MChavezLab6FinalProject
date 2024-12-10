@@ -1,0 +1,2 @@
+../Core/Src/RngDriver.c:9:6:RNG_Init	1
+../Core/Src/RngDriver.c:18:10:RNG_GetRandomNumber	3
